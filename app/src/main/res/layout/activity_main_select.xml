@@ -7,13 +7,15 @@
 
     <ListView
         android:id="@+id/messageListView"
-        android:layout_height="match_parent"
         android:layout_width="match_parent"
-        android:padding="10px"
-        android:dividerHeight="15.0sp"
-        android:stackFromBottom="true"
+        android:layout_height="match_parent"
         android:layout_above="@+id/linearLayout"
+        android:animateLayoutChanges="true"
+        android:animationCache="true"
         android:divider="@android:color/transparent"
+        android:dividerHeight="30.0sp"
+        android:padding="10px"
+        android:stackFromBottom="true"
         android:transcriptMode="alwaysScroll" />
 
     <LinearLayout

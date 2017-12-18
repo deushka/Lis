@@ -34,7 +34,7 @@ public class MainSelect extends AppCompatActivity {
     private Button mEnterButton;
     private EditText mUserName, mRoomName;
 
-    private String roomname = "messages";
+    private String roomname = "test";
 
     private static String author="Test";
 
@@ -56,7 +56,7 @@ public class MainSelect extends AppCompatActivity {
     }
     public void buttonPressed(){
         author = mUserName.getText().toString();
-        if (mRoomName.getText().toString().trim().length()>0 && mRoomName.getText().toString()!="room name"){
+        if (mRoomName.getText().toString().trim().length()>0 && !mRoomName.getText().toString().equals("room name") ){
             roomname = mRoomName.getText().toString();
             getWindow().setSoftInputMode(
                     WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN
