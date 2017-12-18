@@ -28,7 +28,7 @@ public class MessageAdapter extends ArrayAdapter{
         TextView messageAuthor = (TextView) convertView.findViewById(R.id.messageTextViewAuthor);
         Message message = (Message) getItem(position);
         messageText.setText(message.getText());
-        messageAuthor.setText(message.getAuthor());
+        messageAuthor.setText(message.getAuthor()+" "+message.getTime());
         return convertView;
     }
 

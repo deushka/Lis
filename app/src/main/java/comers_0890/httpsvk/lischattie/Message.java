@@ -7,9 +7,11 @@ package comers_0890.httpsvk.lischattie;
 public class Message {
     private String text;
     private String author;
-    public Message(String text, String s){
+    private String time;
+    public Message(String text, String s, String time){
         this.text = text;
         this.author = s;
+        this.time = time;
     }
     public Message(){
 
@@ -20,6 +22,9 @@ public class Message {
     }
     public String getAuthor(){
         return author;
+    }
+    public String getTime() {
+        return time;
     }
     public void setText(String text) {
         this.text = text;

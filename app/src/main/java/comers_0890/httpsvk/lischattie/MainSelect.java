@@ -1,6 +1,6 @@
 package comers_0890.httpsvk.lischattie;
 
-import android.content.Context;
+import java.text.SimpleDateFormat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Editable;
@@ -10,7 +10,6 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
 import android.view.inputmethod.EditorInfo;
-import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
@@ -23,6 +22,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 public class MainSelect extends AppCompatActivity {
@@ -194,7 +194,9 @@ public class MainSelect extends AppCompatActivity {
         mSendButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Message message = new Message(mMessageEditText.getText().toString(), getName());
+                Calendar cal = Calendar.getInstance();
+                SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss");
+                Message message = new Message(mMessageEditText.getText().toString(), getName(), sdf.format(cal.getTime()));
                 mMessageDatabaseReference.push().setValue(message);
                 mMessageEditText.setText("");
                 getWindow().setSoftInputMode(
